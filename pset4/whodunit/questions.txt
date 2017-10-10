@@ -1,0 +1,42 @@
+1.  TODO What’s stdint.h?
+stdint.h is a header file that helps and simplyfies declaring a special, exact width int types.
+
+2.  TODO What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+These are exact-width integer types.
+These types are usefull in portable programs on embedded enviroments where hardwre usually supports only several types. 
+Exact-width integer types which are guaranteed to have the same number N of bits across all implementations
+
+3.  TODO How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+BYTE   > 8-bit unsigned value  
+DWORD  > 32-bit unsigned integer   
+LONG   > 32-bit signed integer
+WORD   > 16-bit unsigned integer
+
+4.  TODO What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? Leading bytes used to identify file formats (with high probability) are generally called "magic numbers."
+0x42 0x4D in hexadecimal, BM in ASCII
+
+5.  TODO What’s the difference between bfSize and biSize?
+bfSize > in BITMAPFILEHEADER structure the total bitmap file size = biSize + sizeof(BITMAPFILEHEADER) + sizeof(BITMAPINFOHEADER) 
+biSize > size of the color pixel data only > width * height
+
+6.  TODO What does it mean if biHeight is negative?
+It means that the bitmap is a top-down image with the origin at the upper left corner.
+
+7.  TODO What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+biBitCount
+
+8.  TODO Why might fopen return NULL in lines 24 and 32 of copy.c?
+the system has no free memory to store the file.
+
+9.  TODO Why is the third argument to fread always 1 in our code?
+The third argument is the number of items to read. Read one item.
+
+10. TODO What value does line 65 of copy.c assign to padding if bi.biWidth is 3?
+3
+
+11. TODO What does fseek do?
+Fseek enables to quickly "jump" to a specific position in a file.
+
+12. TODO What is SEEK_CUR?
+SEEK_CUR is a argument of fseek() function. It describes to move from the current position in file.
+
