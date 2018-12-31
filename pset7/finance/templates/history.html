@@ -1,0 +1,33 @@
+{% extends "layout.html" %} {% block title %} History {% endblock %} {% block main %}
+
+<table>
+    <thead>
+        <tr>
+            <td>Symbol</td>
+            <td>Name</td>
+            <td>Shares</td>
+            <td>Price</td>
+            <td>Date</td>
+            <td>Operation</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{stock.symbol}}</td>
+            <td>{{stock.name}}</td>
+            <td>{{stock.shares}}</td>
+            <td>{{stock.price}}</td>
+            <td>{{stock.date}}</td>
+            <td>{{stock.operation}}</td>
+
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+
+
+
+{% endblock %}
